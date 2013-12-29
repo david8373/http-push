@@ -9,7 +9,7 @@
 	<script src="socket.io/socket.io.js"></script>
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script>
-	    var socket = io.connect('http://localshot');
+	    var socket = io.connect('http://lit-forest-1155.herokuapp.com');
 	    socket.on('notification', function(data) {
 		var _data = JSON.parse(data);
 		$('#container').html(_data.test.sample);
