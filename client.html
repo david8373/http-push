@@ -1,0 +1,20 @@
+<html>
+    <head>
+	<title>Push notification server</title>
+    </head>
+
+    <body>
+	<time></time>
+	<div id="container">Try to change your xml data to update this content</div>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script>
+	    var socket = io.connect('http://localshot');
+	    socket.on('notification', function(data) {
+		var _data = JSON.parse(data);
+		$('#container').html(_data.test.sample);
+		$('time').html('Last Update:' + _data.time);
+	    });
+	</script>
+    </body>
+</html>
